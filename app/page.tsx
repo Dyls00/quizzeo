@@ -3,17 +3,17 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-30 gap-16 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-30 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col row-start-2 items-center">
         <Image
-          className="dark:invert"
-          src="/assets/scrummy.svg"
+          className="logo-quizz"
+          src="/assets/quizzeo.png"
           alt="Next.js logo"
           width={480}
-          height={50}
+          height={40}
           priority
         />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
+        <ol className="list-inside list-decimal mb-8 text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
           <li className="mb-2 tracking-[-.01em]">
             Créer votre quizz from scratch.
           </li>

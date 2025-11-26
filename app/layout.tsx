@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Scrummy",
+  title: "Quizzeo",
   description: "App de gestion de projet",
 };
 
