@@ -75,7 +75,7 @@ export default function CreateUserForm() {
         valide,
         id_projet: idProject,
       })
-      .select('id') // 👈 récupération de l'id du nouvel utilisateur
+      .select('id') 
       .single();
 
     if (error) {
