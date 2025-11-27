@@ -99,6 +99,10 @@ width: 20%;
   gap: 20px;
 }
 
+.hover-btn :hover{
+  color: white;
+}
+
 .button-log {
   cursor: pointer;
   width: 40px;
@@ -135,7 +139,6 @@ width: 20%;
   box-shadow: 4px 4px var(--main-color);
   font-size: 17px;
   font-weight: 600;
-  color: var(--font-color);
   cursor: pointer;
 }
 

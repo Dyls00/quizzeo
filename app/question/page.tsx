@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 
-type Question = {
+export type Question = {
   id: number;
   libelle: string;
   reponse_correcte: string;
