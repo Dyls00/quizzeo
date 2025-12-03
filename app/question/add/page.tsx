@@ -67,21 +67,6 @@ export default function Question() {
                     <div className="question-text">Bienvenue</div>
                     <label className="question-title">Veuillez créer votre question</label>
 
-                    <div className="border input p-3 mb-3">
-
-                        <select
-                            value={theme}
-                            onChange={(e) => setTheme(e.target.value)}
-                        >
-                            <option value="">--Choisir le thème--</option>
-                            {ListTheme.map((t) => (
-                                <option key={t.id} value={t.libelle}>
-                                    {t.libelle}
-                                </option>
-                            ))}
-                        </select>
-                    </div>
-
                     <input
                         className="input"
                         placeholder="Décrire la question"

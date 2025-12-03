@@ -18,7 +18,7 @@ export default function QuizList({ quizz }: any) {
               >
                 <div className="">
                   <h2 className="text-xl font-semibold">Quizz N°{q.id}</h2>
-                  <p className="text-gray-500">Libelle : {q.libelle}</p>
+                  <p className="text-gray-500">Thème : {q.theme}</p>
                 </div>
 
                 <Link

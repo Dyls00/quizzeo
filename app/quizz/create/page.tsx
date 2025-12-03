@@ -5,7 +5,7 @@ import { supabase } from "@/lib/supabaseClient";
 import { Question } from "@/question/page";
 
 export default function CreateQuiz() {
-  const [libelle, setLibelle] = useState("");
+  const [theme, setTheme] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selected, setSelected] = useState<number[]>([]);
 
@@ -24,7 +24,7 @@ export default function CreateQuiz() {
   };
 
   const create = async () => {
-    if (!libelle.trim()) {
+    if (!theme.trim()) {
       return alert("Il faut un libellé pour le quiz !");
     }
     if (selected.length === 0) {
@@ -36,7 +36,7 @@ export default function CreateQuiz() {
 
     const { data: quiz } = await supabase
       .from("quizz")
-      .insert([{ libelle }])
+      .insert([{ theme }])
       .select()
       .single();
 
@@ -47,7 +47,7 @@ export default function CreateQuiz() {
     }
 
     alert("Quiz créé !");
-    setLibelle("");
+    setTheme("");
     setSelected([]);
   };
 
@@ -59,7 +59,6 @@ export default function CreateQuiz() {
           <div className="question-text">Création d’un nouveau quizz</div>
           <label className="question-title">Remplissez les informations</label>
 
-          {/* Libellé */}
           <div className="space-y-2 p-4">
             <div
               role="alert"
@@ -78,19 +77,18 @@ export default function CreateQuiz() {
                   strokeLinecap="round"
                 ></path>
               </svg>
-              <p className="text-xs font-semibold">Libellé du quizz</p>
+              <p className="text-xs font-semibold">Thème du quizz</p>
             </div>
 
             <input
               className="input mt-2"
               type="text"
-              placeholder="Écrivez le libellé du quizz"
-              value={libelle}
-              onChange={(e) => setLibelle(e.target.value)}
+              placeholder="Écrivez thème du quizz"
+              value={theme}
+              onChange={(e) => setTheme(e.target.value)}
             />
           </div>
 
-          {/* Liste des questions */}
           <label className="question-title mt-4">Sélection des questions</label>
 
           <div className="space-y-2">
