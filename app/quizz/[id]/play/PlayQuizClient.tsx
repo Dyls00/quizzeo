@@ -7,6 +7,7 @@ import { useRouter } from "next/navigation";
 export default function PlayQuizClient({ quizz_id }: any) {
 
   const [questions, setQuestions] = useState<any[]>([]);
+  const [score, setScore] = useState(3);
   const [index, setIndex] = useState(0);
   const [mode, setMode] = useState("");
   const [partieId, setPartieId] = useState<number | null>(null);
@@ -71,6 +72,7 @@ export default function PlayQuizClient({ quizz_id }: any) {
         mode,
         propositions,
         reponse: rep,
+        score
       },
     ]);
 

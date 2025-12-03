@@ -49,7 +49,7 @@ export default function ResultatsQuiz({ quizz_id }: any) {
 
   return (
     <div className="question-main">
-      <div className="question-form mt-30">
+      <div className="question-form mt-5 mb-10">
         <form className="form form-question">
           <div className="question-text">Jeu terminé ! </div>
           <label className="question-title">Voici les résultats de votre quizz</label>
@@ -79,6 +79,27 @@ export default function ResultatsQuiz({ quizz_id }: any) {
               <p><strong>Bonne réponse :</strong> {r.question.reponse_correcte}</p>
             </div>
           ))}
+
+          <div
+                role="alert"
+                className="bg-white dark:bg-gray-900 border-l-4 border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 p-2 rounded-lg flex items-center transition duration-300 ease-in-out hover:bg-gray-100 dark:hover:bg-gray-800 transform hover:scale-105"
+              >
+                <svg
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="h-5 w-5 flex-shrink-0 mr-2 text-green-600"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13 16h-1v-4h1m0-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                    strokeWidth="2"
+                    strokeLinejoin="round"
+                    strokeLinecap="round"
+                  ></path>
+                </svg>
+                <p className="text-xs font-semibold">Score final : 15pts</p>
+              </div>
           <button className="button-confirm"><a href="/">Retourner →</a></button>
         </form>
       </div>
