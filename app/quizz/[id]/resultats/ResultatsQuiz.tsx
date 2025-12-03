@@ -4,12 +4,22 @@ import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 
+interface Row {
+  id: number;
+  reponse: string;
+  mode: string;
+  question: {
+    libelle: string;
+    reponse_correcte: string;
+  }[];
+}
+
 export default function ResultatsQuiz() {
 
   const search = useSearchParams();
   const partie_id = search.get("partie");
 
-  const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState<Row[]>([])
 
   useEffect(() => {
     const load = async () => {
