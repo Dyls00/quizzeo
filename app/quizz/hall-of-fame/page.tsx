@@ -9,8 +9,8 @@ export default function HallOfFame({ params }: any) {
   useEffect(() => {
     const load = async () => {
       const { data } = await supabase
-        .from("run")
-        .select("score, joueur:pseudo")
+        .from("partie")
+        .select("score")
         .eq("quizz_id", params.id)
         .order("score", { ascending: false });
       setScores(data || []);
@@ -19,14 +19,15 @@ export default function HallOfFame({ params }: any) {
   }, []);
 
   return (
-    <div className="p-10">
-      <h1 className="text-xl">Hall of Fame</h1>
-
-      {scores.map((s: any, i) => (
-        <div key={i} className="border p-3 mt-3">
-          <strong>{s.joueur}</strong> — {s.score} points
+   <div className="question-main">
+            <div className="question-form mt-30">
+                <form className="form form-question">
+                    <div className="question-text">Bienvenue ! </div>
+                    <label className="question-title">Voici un ordre des meilleurs joueurs</label>
+                    <button className="button-confirm"><a href="/">Retourner →</a></button>
+                </form>
+            </div>
         </div>
-      ))}
-    </div>
+
   );
 }

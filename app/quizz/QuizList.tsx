@@ -34,7 +34,11 @@ export default function QuizList({ quizz }: any) {
               </div>
             ))}
           </div>
-          <button className="button-confirm"><a href="/">Retourner →</a></button>
+          <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+            <a href="/quizz/hall-of-fame" className="hall">Meilleurs joueurs</a>
+          </button>
+
+          <button className="button-confirmed"><a href="/">Retourner →</a></button>
         </div>
       </div>
     </div>

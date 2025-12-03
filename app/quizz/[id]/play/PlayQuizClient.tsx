@@ -42,6 +42,21 @@ export default function PlayQuizClient({ quizz_id }: any) {
     setPartieId(data.id);
   };
 
+  const EndPartie = async () => {
+    const { data, error } = await supabase
+      .from("partie")
+      .insert([{ quizz_id, score }])
+      .select()
+      .single();
+
+    if (error) {
+      console.error(error);
+      return;
+    }
+
+    setPartieId(data.id);
+  };
+
   const chooseMode = (m: string) => {
     setMode(m);
 
@@ -81,6 +96,12 @@ export default function PlayQuizClient({ quizz_id }: any) {
       setMode("");
       setPropositions([]);
     } else {
+      await supabase.from("partie").insert([
+      {
+        quizz_id,
+        score
+      },
+    ]);
       router.push(`/quizz/${quizz_id}/resultats?partie=${partieId}`);
     }
   };
