@@ -3,8 +3,10 @@
 import { useEffect, useState } from "react";
 import { supabase } from "@/lib/supabaseClient";
 import { Question } from "@/question/page";
+import { useRouter } from "next/navigation";
 
 export default function CreateQuiz() {
+  const router = useRouter();
   const [theme, setTheme] = useState("");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selected, setSelected] = useState<number[]>([]);
@@ -25,7 +27,7 @@ export default function CreateQuiz() {
 
   const create = async () => {
     if (!theme.trim()) {
-      return alert("Il faut un libellé pour le quiz !");
+      return alert("Il faut un thème pour le quiz !");
     }
     if (selected.length === 0) {
       return alert("Il faut sélectionner au moins une question !");
@@ -49,6 +51,7 @@ export default function CreateQuiz() {
     alert("Quiz créé !");
     setTheme("");
     setSelected([]);
+    router.push("/");
   };
 
   return (

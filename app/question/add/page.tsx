@@ -32,11 +32,6 @@ export default function Question() {
     const handleSubmit = async (e: any) => {
         e.preventDefault();
 
-        if (theme === "") {
-            alert("Veuillez choisir un thème !");
-            return;
-        }
-
         const { data, error } = await supabase.from("question").insert([
             {
                 libelle: question,
@@ -44,7 +39,6 @@ export default function Question() {
                 reponse_incorrect_1: m1,
                 reponse_incorrect_2: m2,
                 reponse_incorrect_3: m3,
-                theme: theme,
             },
         ]);
 
@@ -56,7 +50,6 @@ export default function Question() {
             setM1("");
             setM2("");
             setM3("");
-            setTheme("");
         }
     };
 

@@ -14,7 +14,7 @@ interface Row {
   }[];
 }
 
-export default function ResultatsQuiz() {
+export default function ResultatsQuiz({ quizz_id }: any) {
 
   const search = useSearchParams();
   const partie_id = search.get("partie");
